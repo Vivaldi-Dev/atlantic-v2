@@ -1,5 +1,9 @@
 import React from 'react'
 import Image from "next/image"
+import Services from '../components/services/Services'
+import Hero from '../components/hero/Hero'
+import Clients from './components/clients/Clients'
+import Info from './components/info/nfo'
 
 export default function page() {
     return (
@@ -98,6 +102,11 @@ export default function page() {
                     </div>
                 </div>
             </div>
+
+            <Services />
+            <Hero />
+            <Clients />
+            <Info />
 
         </>
     )
