@@ -1,4 +1,9 @@
 import React from 'react'
+import GridLyout from './grid/GridLyout'
+import GridLayoutv from './grid/gridInte'
+import Hero from '../components/hero/Hero'
+
+
 
 export default function Page() {
     return (
@@ -30,9 +35,16 @@ export default function Page() {
                 <p className='text-sm'>Escolhe o teu destino e deixa a Atlantic Travel cuidar de tudo.</p>
 
                 <button className='p-3 bg-black rounded-xl text-sm text-white mt-5'>
-                     Destinos & Experiências Nacionais
+                    Destinos & Experiências Nacionais
                 </button>
             </div>
+
+            <div className='max-w-[1640px] mx-auto'>
+                <GridLyout />
+                <GridLayoutv />
+
+            </div>
+            <Hero />
         </div>
 
     )
