@@ -39,10 +39,9 @@ export default function Page() {
                 </button>
             </div>
 
-            <div className='max-w-[1640px] mx-auto'>
+            <div className='max-w-7xl mx-auto'>
                 <GridLyout />
                 <GridLayoutv />
-
             </div>
             <Hero />
         </div>
