@@ -2,7 +2,16 @@
 
 const nextConfig = {
   images: {
-    domains: ['api.panoramatours.co.mz', 'localhost', '127.0.0.1', '192.168.137.128' , '192.168.137.171','10.42.0.46','192.168.50.190','192.168.18.160'],
+    domains: [
+      'api.panoramatours.co.mz',
+      'localhost',
+      '127.0.0.1',
+      '192.168.137.128',
+      '192.168.137.171',
+      '10.42.0.46',
+      '192.168.50.190',
+      '192.168.18.160'
+    ],
   },
   env: {
     NEXT_PUBLIC_API_URL: process.env.API_URL,
@@ -18,4 +27,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
