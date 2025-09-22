@@ -4,6 +4,9 @@ pipeline {
     environment {
         DOCKER_IMAGE = "atlantic-travel"
         DOCKER_COMPOSE_FILE = "docker-compose.yml"
+        API_URL = "https://api.panoramatours.co.mz/api"
+        BASE_IMAGE_URL = "https://api.panoramatours.co.mz"
+        NODE_ENV = "production"
     }
 
     stages {
@@ -11,15 +14,30 @@ pipeline {
         stage('Preparar Workspace') {
             steps {
                 echo "Limpando workspace antigo..."
-                deleteDir()                  
-                checkout scm                  
+                deleteDir()
+                git branch: 'main',
+                    url: 'https://github.com/Vivaldi-Dev/atlantic-v2.git'
+            }
+        }
+
+        stage('Configurar .env.production') {
+            steps {
+                echo "Gerando .env.production para Next.js..."
+                sh '''
+                    echo "API_URL=$API_URL" > .env.production
+                    echo "BASE_IMAGE_URL=$BASE_IMAGE_URL" >> .env.production
+                    echo "NODE_ENV=$NODE_ENV" >> .env.production
+                '''
+                sh 'cat .env.production'
             }
         }
 
         stage('Instalar Dependências') {
-            steps {
+             steps {
                 echo "Instalando dependências Node.js..."
                 sh 'npm ci'
+                echo "Garantindo que typescript está instalado..."
+                sh 'npm install typescript @types/node --save-dev'
             }
         }
 
