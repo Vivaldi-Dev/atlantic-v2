@@ -19,13 +19,6 @@ pipeline {
             }
         }
 
-        stage('Instalar TypeScript Primeiro') {
-            steps {
-                echo "Instalando TypeScript primeiro..."
-                sh 'npm install typescript @types/node --save-dev'
-            }
-        }
-
         stage('Configurar .env.production') {
             steps {
                 echo "Gerando .env.production para Next.js..."
@@ -42,6 +35,13 @@ pipeline {
             steps {
                 echo "Instalando dependências Node.js..."
                 sh 'npm ci'
+            }
+        }
+
+        stage('Instalar TypeScript') {
+            steps {
+                echo "Instalando TypeScript pós npm ci..."
+                sh 'npm install typescript @types/node --save-dev'
             }
         }
 
