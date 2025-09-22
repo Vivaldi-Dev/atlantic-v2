@@ -10,13 +10,19 @@ pipeline {
     }
 
     stages {
-
         stage('Preparar Workspace') {
             steps {
                 echo "Limpando workspace antigo..."
                 deleteDir()
                 git branch: 'main',
                     url: 'https://github.com/Vivaldi-Dev/atlantic-v2.git'
+            }
+        }
+
+        stage('Instalar TypeScript Primeiro') {
+            steps {
+                echo "Instalando TypeScript primeiro..."
+                sh 'npm install typescript @types/node --save-dev'
             }
         }
 
@@ -33,11 +39,9 @@ pipeline {
         }
 
         stage('Instalar Dependências') {
-             steps {
+            steps {
                 echo "Instalando dependências Node.js..."
                 sh 'npm ci'
-                echo "Garantindo que typescript está instalado..."
-                sh 'npm install typescript @types/node --save-dev'
             }
         }
 
@@ -59,8 +63,8 @@ pipeline {
             steps {
                 echo "Atualizando container em produção..."
                 sh """
-                    docker-compose down
-                    docker-compose up -d --build
+                    docker-compose -f $DOCKER_COMPOSE_FILE down
+                    docker-compose -f $DOCKER_COMPOSE_FILE up -d --build
                 """
             }
         }
