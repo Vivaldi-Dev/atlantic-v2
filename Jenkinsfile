@@ -21,7 +21,7 @@ pipeline {
 
         stage('Configurar .env.production') {
             steps {
-                echo '⚙️ Gerando .env.production para Next.js...'
+                echo 'Gerando .env.production para Next.js...'
                 sh '''
                     echo "API_URL=$API_URL" > .env.production
                     echo "BASE_IMAGE_URL=$BASE_IMAGE_URL" >> .env.production
@@ -44,21 +44,21 @@ pipeline {
 
         stage('Build Next.js') {
             steps {
-                echo '🏗️ Construindo app Next.js...'
+                echo 'Construindo app Next.js...'
                 sh 'NEXT_IGNORE_ESLINT=1 NEXT_TELEMETRY_DISABLED=1 NEXT_USE_TURBOPACK=0 npm run build'
             }
         }
 
         stage('Docker Build') {
             steps {
-                echo '🐳 Construindo imagem Docker...'
+                echo 'Construindo imagem Docker...'
                 sh "docker build --no-cache -t $DOCKER_IMAGE:latest ."
             }
         }
 
         stage('Deploy com Docker Compose') {
             steps {
-                echo '🚀 Atualizando container em produção...'
+                echo 'Atualizando container em produção...'
                 sh """
                     docker-compose -f $DOCKER_COMPOSE_FILE down
                     docker-compose -f $DOCKER_COMPOSE_FILE up -d --build --remove-orphans
@@ -68,7 +68,7 @@ pipeline {
 
         stage('Testar App') {
             steps {
-                echo '🧪 Executando testes (se houver)...'
+                echo ' Executando testes (se houver)...'
                 sh 'npm run test || echo "Nenhum teste definido"'
             }
         }
