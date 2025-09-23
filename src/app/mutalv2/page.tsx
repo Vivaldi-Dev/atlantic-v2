@@ -86,13 +86,13 @@ const NestedDiamond = () => {
                     </div>
 
                     <div className="relative  h-full">
-                        <div className="absolute top-0 bottom-0 right-0 bg-white h-screen w-[600px] z-0"></div>
+                        <div className="absolute top-0 bottom-0 right-0 z-0"></div>
 
 
                         <div className="absolute right-0 inset-0  z-10  w-ft h-screen">
 
 
-                            <div className='h-screen absolute w-25 fullrotate right-66 top-0 p-4 '>
+                            <div className='h-screen absolute w-25 fullrotate right-66 top-0 p-4 bg-white'>
                                 <div className='bg-white  w-full h-70 rounded-2xl -mt-60 '>
                                     <Image
                                         className="w-full h-full object-cover rounded-lg  shadow-lg "
@@ -103,7 +103,7 @@ const NestedDiamond = () => {
                                     />
                                 </div>
 
-                                <div className=' w-full h-38 rounded-2xl mt-5'>
+                                <div className=' w-full h-38 rounded-2xl mt-5 '>
                                     <Image
                                         className="w-full h-full object-cover rounded-lg  shadow-lg "
                                         src={'/mural/lado2.jpg'}
@@ -148,10 +148,10 @@ const NestedDiamond = () => {
                                 />
                             </div>
 
-                            <div className="absolute right-40 top-0">
+                            <div className="absolute right-40 top-0 ">
 
                                 <div
-                                    className="w-70 h-35  absolute right-60 top-0 rounded-br-2xl  hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    className="bg-white p-1 border-2 border-white w-70 h-35  absolute right-60 top-0 rounded-br-2xl  hover:scale-110 transition-all duration-300 cursor-pointer"
                                     style={{ clipPath: 'polygon(50% 100%, 0% 0%, 100% 0%)' }} >
                                     <Image
                                         className="w-full h-full object-cover rounded-lg  shadow-lg "
@@ -163,9 +163,9 @@ const NestedDiamond = () => {
                                 </div>
 
 
-                                <div className="w-80 h-80  transform rotate-45 rounded-xl  relative overflow-visible">
+                                <div className="w-80 h-80 bg-white p-1 border-2 border-white transform rotate-45 rounded-xl  relative overflow-visible">
 
-                                    <div className="absolute top-2 left-2   transform  -rotate-45">
+                                    <div className=" absolute top-2 left-2   transform  -rotate-45">
                                         <div className="w-36 h-36 transform rotate-45 rounded-lg  hover:scale-110 transition-all duration-300 cursor-pointer overflow-hidden">
 
                                             <Image
