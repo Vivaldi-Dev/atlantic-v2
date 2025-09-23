@@ -272,3 +272,9 @@ input[type="date"]:not(:focus):valid+span {
 .delay-500 {
   animation-delay: 0.5s;
 }
+
+/* mural */
+
+.fullrotate {
+  transform: rotate(315deg);
+}

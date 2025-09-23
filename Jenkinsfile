@@ -38,6 +38,8 @@ pipeline {
                     rm -rf node_modules package-lock.json
                     npm install
                     npm install typescript @types/node --save-dev
+                    npm install @tailwindcss/postcss tailwindcss --save-dev
+                    npm install typescript @types/node --save-dev
                 '''
             }
         }
