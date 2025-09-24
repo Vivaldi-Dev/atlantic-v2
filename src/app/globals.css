@@ -44,7 +44,6 @@ input[type="date"]:not(:focus):valid+span {
 
 .Roboto {
     font-family: 'Roboto';
-  
 }
 
 .Robotoboldpacotes {
@@ -277,4 +276,8 @@ input[type="date"]:not(:focus):valid+span {
 
 .fullrotate {
   transform: rotate(315deg);
+}
+
+.fix-orientation {
+  image-orientation: from-image;
 }

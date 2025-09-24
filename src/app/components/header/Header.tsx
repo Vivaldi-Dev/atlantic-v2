@@ -40,17 +40,17 @@ export default function Header() {
             <div className="flex-shrink-0">
                 <Link href="/">
                     <Image 
-                        src="/images/logorginal.png" 
+                        src="/images/logoorg.png" 
                         alt="Logo" 
-                        width={160} 
-                        height={40} 
-                        className="transition-transform hover:scale-105"
+                        width={500} 
+                        height={500} 
+                        className="transition-transform hover:scale-105 h-[160px] w-50"
                     />
                 </Link>
             </div>
 
             <nav className="hidden md:flex">
-                <ul className='flex gap-6 font-semibold text-sm xl:text-base'>
+                <ul className='flex gap-6 font-normal Roboto text-sm xl:text-base'>
                     {navItems.map(item => (
                         <li key={item.href}>
                             <Link
