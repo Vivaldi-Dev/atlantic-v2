@@ -76,24 +76,35 @@ const NestedDiamond = () => {
 
 
         <div className='overflow-hidden'>
-            <div className="  h-[600px] mt-20  bg-cover bg-center bg-no-repeat bg-[url('/images/bgbanner.jpg')] overflow-hidden">
+            <div className="relative  h-[600px]  xl:mt-35 2xl:mt-30  bg-cover bg-center bg-no-repeat bg-[url('/images/bgbanner.jpg')] ">
 
 
-                <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2 h-full'>
 
-                    <div className=''>
-                        <p>jhdsjkh</p>
+
+                    <div className='flex justify-center items-center h-full'>
+                        <div>
+                            <div className='text-center'>
+                                <p className='text-white font-semibold text-5xl Roboto mb-4'>Viajar é viver novas histórias</p>
+                                <p className='text-white'>Com a Atlantic Travel, o mundo está ao teu alcance.</p>
+                            </div>
+
+                            <div className='text-center flex items-center gap-4 justify-center mt-5'>
+                                <button className='rounded border border-white text-white  py-2 px-10'>Fala connosco</button>
+
+                                 <button className='rounded  bg-[#F7D007]  py-2 px-6'>Simulação de Orçamento</button>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div className="relative  h-full">
-                        <div className="absolute top-0 bottom-0 right-0 z-0"></div>
+                        <div className="absolute top-0 bottom-0 -right-0 bg-white h-screen w- -rotate-50 z-0"></div>
 
+                        <div className="absolute right-10 inset-0  z-10  w-ft h-screen">
 
-                        <div className="absolute right-0 inset-0  z-10  w-ft h-screen">
-
-
-                            <div className='h-screen absolute w-25 fullrotate right-66 top-0 p-4 bg-white'>
-                                <div className='bg-white  w-full h-70 rounded-2xl -mt-60 '>
+                            <div className='h-screen absolute w-25 fullrotate xl:right-85 2xl:right-66 top-0 p-4 '>
+                                <div className='  w-full h-70 rounded-2xl -mt-60 '>
                                     <Image
                                         className="w-full h-full object-cover rounded-lg  shadow-lg "
                                         src={'/mural/lado1.jpg'}
@@ -151,7 +162,7 @@ const NestedDiamond = () => {
                             <div className="absolute right-40 top-0 ">
 
                                 <div
-                                    className="bg-white p-1 border-2 border-white w-70 h-35  absolute right-60 top-0 rounded-br-2xl  hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    className=" w-70 h-35  absolute right-60 top-0 rounded-br-2xl  hover:scale-110 transition-all duration-300 cursor-pointer"
                                     style={{ clipPath: 'polygon(50% 100%, 0% 0%, 100% 0%)' }} >
                                     <Image
                                         className="w-full h-full object-cover rounded-lg  shadow-lg "
@@ -163,7 +174,7 @@ const NestedDiamond = () => {
                                 </div>
 
 
-                                <div className="w-80 h-80 bg-white p-1 border-2 border-white transform rotate-45 rounded-xl  relative overflow-visible">
+                                <div className="w-80 h-80 transform rotate-45 rounded-xl  relative overflow-visible">
 
                                     <div className=" absolute top-2 left-2   transform  -rotate-45">
                                         <div className="w-36 h-36 transform rotate-45 rounded-lg  hover:scale-110 transition-all duration-300 cursor-pointer overflow-hidden">

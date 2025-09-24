@@ -50,12 +50,12 @@ export default function Header() {
             </div>
 
             <nav className="hidden md:flex">
-                <ul className='flex gap-6 font-bold text-sm xl:text-base'>
+                <ul className='flex gap-6 font-semibold text-sm xl:text-base'>
                     {navItems.map(item => (
                         <li key={item.href}>
                             <Link
                                 href={item.href}
-                                className={`transition-colors relative py-1 ${pathname === item.href ? 'text-[#F9D423]' : 'text-white hover:text-[#F9D423]'}`}>
+                                className={`transition-colors relative py-1 ${pathname === item.href ? 'text-[#F9D423]' : 'text-[#767171] hover:text-[#F9D423]'}`}>
                                 {item.label}
                                 {pathname === item.href && (
                                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#F9D423]"></span>
