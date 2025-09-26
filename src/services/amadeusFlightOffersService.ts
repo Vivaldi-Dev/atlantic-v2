@@ -2,15 +2,10 @@ import axios from "axios";
 import { FlightOffersRequest, FlightOffersResponse } from "../types/amadeus";
 
 export class AmadeusFlightOffersService {
-  private static baseUrl = "https://test.travel.api.amadeus.com/v2";
 
-  static async searchFlightOffers(
-    accessToken: string,
-    body: FlightOffersRequest
-  ): Promise<FlightOffersResponse> {
+  static async searchFlightOffers(accessToken: string,body: FlightOffersRequest): Promise<FlightOffersResponse> {
     try {
-      const response = await axios.post<FlightOffersResponse>(
-        `${this.baseUrl}/shopping/flight-offers`,
+      const response = await axios.post<FlightOffersResponse>( `/api/amadeus/flights/offers`,
         body,
         {
           headers: {
