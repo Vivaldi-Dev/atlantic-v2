@@ -82,9 +82,11 @@ export default function VoosPage() {
                         </div>
                       </div>
 
-                      <div className="mt-4 flex w-full items-center relative">
-
-                        <div className="2xl:w-5xl xl:w-4xl border-r p-4 ">
+                      {/* bloco principal */}
+                      <div className="mt-4 flex w-full items-start justify-between gap-8">
+                        {/* horários ida/volta */}
+                        <div className="flex-1 border-r p-4">
+                          {/* ida */}
                           <div className="flex items-center justify-between">
                             <div className="text-left">
                               <div className="text-2xl font-bold text-gray-900">15:45</div>
@@ -115,6 +117,7 @@ export default function VoosPage() {
                             Maputo, Moçambique → Johannesburg, África do Sul
                           </div>
 
+                          {/* volta */}
                           <div className="mt-6 pt-6 border-t border-gray-200">
                             <div className="flex items-center justify-between">
                               <div className="text-left">
@@ -148,18 +151,21 @@ export default function VoosPage() {
                           </div>
                         </div>
 
-                        <div className="absolute top-0 xl:right-0 2xl:right-20 p-8">
+                        <div className="p-4 flex flex-col items-start justify-center">
                           <p>A partir de</p>
-                          <p className="text-md">MNZ 185,000</p>
-                          <button>Selcionar</button>
+                          <p className="text-md text-[#0871B5] Roboto text-2xl font-semibold">
+                            MNZ 185,000
+                          </p>
+                          <p className="text-sm">Preço por pessoa (incl. taxas e encargos)</p>
+
+                          <button className="bg-[#0871B5] p-4 rounded-2xl mt-4 text-white">
+                            Selecionar
+                          </button>
                         </div>
-
-
                       </div>
-
-
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
