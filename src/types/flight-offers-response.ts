@@ -1,4 +1,5 @@
 
+
 export interface FlightOffersResponse {
   meta: Meta;
   data: FlightOffer[];
