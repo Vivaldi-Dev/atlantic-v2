@@ -7,13 +7,6 @@ export class AmadeusFlightOffersService {
     try {
       const response = await axios.post<FlightOffersResponse>( `/api/amadeus/flights/offers`,
         body,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            "Content-Type": "application/vnd.amadeus+json",
-            "X-HTTP-Method-Override": "POST",
-          },
-        }
       );
 
       return {
