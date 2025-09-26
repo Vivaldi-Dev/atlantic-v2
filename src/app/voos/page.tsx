@@ -1,21 +1,95 @@
+
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 import { useFlightOffers } from "@/hooks/useFlightOffers";
 import { FlightOffersRequest } from "@/types/amadeus";
-import FlyBanner from "./components/banner/FlyBanner";
+import { Plane, Clock, Users, Luggage, Calendar, ArrowRight, Tag, Shield } from "lucide-react";
 import { FiChevronDown } from "react-icons/fi";
-import { ChevronLeft, ChevronRight, ChevronDown, Sliders, X, Plane } from 'lucide-react';
+
 
 export default function VoosPage() {
   const searchParams = useSearchParams();
-  const requestParam = searchParams.get("request");
 
-  const request: FlightOffersRequest | null = requestParam
-    ? JSON.parse(decodeURIComponent(requestParam))
-    : null;
 
-  const { data, loading, error } = useFlightOffers("dummy", request);
+  const request: FlightOffersRequest | null = useMemo(() => {
+    const requestParam = searchParams.get("request");
+    return requestParam ? JSON.parse(decodeURIComponent(requestParam)) : null;
+  }, [searchParams]);
+
+
+  const requestKey = useMemo(() => {
+    return request ? JSON.stringify(request) : "dummy";
+  }, [request]);
+
+  const { data, loading, error } = useFlightOffers(requestKey, request);
+
+
+  const formatDuration = (duration: string) => {
+    const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
+    if (!match) return duration;
+
+    const hours = match[1] ? `${match[1]}h` : '';
+    const minutes = match[2] ? `${match[2]}m` : '';
+    return `${hours} ${minutes}`.trim();
+  };
+
+
+  const formatDateTime = (dateTime: string) => {
+    return new Date(dateTime).toLocaleString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
+
+  const getCabinName = (cabin: string) => {
+    const cabins: { [key: string]: string } = {
+      'ECONOMY': 'Econômica',
+      'PREMIUM_ECONOMY': 'Econômica Premium',
+      'BUSINESS': 'Executiva',
+      'FIRST': 'Primeira Classe'
+    };
+    return cabins[cabin] || cabin;
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-500 border-t-transparent mx-auto mb-4"></div>
+            <h2 className="text-2xl font-bold text-gray-800">Buscando as melhores ofertas...</h2>
+            <p className="text-gray-600 mt-2">Estamos encontrando voos para você</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+            <div className="text-red-500 text-4xl mb-3">⚠️</div>
+            <h2 className="text-xl font-bold text-red-800 mb-2">Erro na busca</h2>
+            <p className="text-red-600">{error}</p>
+            <button
+              onClick={() => window.history.back()}
+              className="mt-4 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors"
+            >
+              Voltar para a pesquisa
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
 
   return (
     <div className=" space-y-20  ">
@@ -38,11 +112,6 @@ export default function VoosPage() {
       ) : (
         !loading && <p>Nenhum voo encontrado.</p>
       )} */}
-
-
-      {/* <div>
-        <FlyBanner />
-      </div> */}
 
 
       <div className="flex items-center gap-4 p-8 w-full">
@@ -82,11 +151,11 @@ export default function VoosPage() {
                         </div>
                       </div>
 
-                      {/* bloco principal */}
+
                       <div className="mt-4 flex w-full items-start justify-between gap-8">
-                        {/* horários ida/volta */}
+
                         <div className="flex-1 border-r p-4">
-                          {/* ida */}
+
                           <div className="flex items-center justify-between">
                             <div className="text-left">
                               <div className="text-2xl font-bold text-gray-900">15:45</div>
@@ -117,7 +186,7 @@ export default function VoosPage() {
                             Maputo, Moçambique → Johannesburg, África do Sul
                           </div>
 
-                          {/* volta */}
+
                           <div className="mt-6 pt-6 border-t border-gray-200">
                             <div className="flex items-center justify-between">
                               <div className="text-left">
@@ -153,12 +222,12 @@ export default function VoosPage() {
 
                         <div className="p-4 flex flex-col items-start justify-center">
                           <p>A partir de</p>
-                          <p className="text-md text-[#0871B5] Roboto text-2xl font-semibold">
+                          <p className="text-md text-[#0871B5] Roboto text-2xl  font-bold">
                             MNZ 185,000
                           </p>
                           <p className="text-sm">Preço por pessoa (incl. taxas e encargos)</p>
 
-                          <button className="bg-[#0871B5] p-4 rounded-2xl mt-4 text-white">
+                          <button className="bg-[#0871B5] w-full p-4 rounded-2xl mt-4 text-white font-semibold">
                             Selecionar
                           </button>
                         </div>
