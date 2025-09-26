@@ -1,4 +1,4 @@
-"use client" 
+"use client"
 import DatePicker from "react-datepicker";
 import { FaCalendarAlt } from 'react-icons/fa';
 import "react-datepicker/dist/react-datepicker.css";
@@ -26,7 +26,7 @@ export default function Voo() {
                 </div>
 
                 <div className="relative">
-                   
+
                     <PlaneTakeoff className="absolute left-3 top-5 transform -translate-y-1/2 text-gray-400" size={20} />
                     <input
                         id="destino"
@@ -107,28 +107,29 @@ export default function Voo() {
                 </div>
             </div>
 
-            <div className="flex md:flex-col md:justify-center items-center gap-4">
+            <div className="">
 
-                <div className="md:mt-7 md:mb-3">
-                    <label className="flex items-center gap-3 text-sm font-medium text-gray-700  rounded-lg hover:bg-gray-50 transition-colors">
-                        <input
-                            type="checkbox"
-                            className="accent-[#0871B5] h-4 w-4"
-                        />
-                        <span>Ida e Volta</span>
-                    </label>
+                <div >
+                    <div className="md:mt-7 md:mb-3">
+                        <label className="flex items-center gap-3 text-sm font-medium text-gray-700  rounded-lg hover:bg-gray-50 transition-colors">
+                            <input
+                                type="checkbox"
+                                className="accent-[#0871B5] h-4 w-4"
+                            />
+                            <span>Ida e Volta</span>
+                        </label>
+                    </div>
+
+                    <div className="md:mb-4">
+                        <label className="flex items-center gap-3 text-sm font-medium text-gray-700  rounded-lg hover:bg-gray-50 transition-colors">
+                            <input
+                                type="checkbox"
+                                className="accent-[#0871B5] h-4 w-4"
+                            />
+                            <span>Só Ida</span>
+                        </label>
+                    </div>
                 </div>
-
-                <div className="md:mb-4">
-                    <label className="flex items-center gap-3 text-sm font-medium text-gray-700  rounded-lg hover:bg-gray-50 transition-colors">
-                        <input
-                            type="checkbox"
-                            className="accent-[#0871B5] h-4 w-4"
-                        />
-                        <span>Só Ida</span>
-                    </label>
-                </div>
-
 
 
 

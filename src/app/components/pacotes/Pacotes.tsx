@@ -1,9 +1,10 @@
-"use client" 
+"use client"
 
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from 'next/image'
+import FormRender from "../form/formrender/FormRender";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,6 +94,13 @@ export default function Pacotes() {
 
   return (
     <div className="md:py-20" ref={sectionRef}>
+
+
+      <div className="max-w-[1640px] mx-auto justify-center items-center flex mb-10 ">
+          <FormRender/>
+      </div>
+
+
       <div>
         <div className="text-center">
           <p className="Robotobold text-3xl md:text-5xl md:mb-4 mt-5 md:mt-0" ref={titleRef}>
