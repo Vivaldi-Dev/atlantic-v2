@@ -260,7 +260,7 @@ export default function VoosPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="flex gap-8 p-8 max-w-[1640px] mt-30 mx-auto">
         
-        {/* Sidebar de Filtros - FIXA sem scroll */}
+
         <div className="w-80 flex-shrink-0">
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-24 h-fit max-h-[calc(100vh-120px)] overflow-hidden">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Filtros de pesquisa</h2>
