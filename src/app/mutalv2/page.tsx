@@ -193,7 +193,51 @@ const NestedDiamond = () => {
                                         />
                                     </div>
 
-                                    <div className='w- h-80 rounded-2xl bottom-10 absolute -ml-15'>
+                                    <div className='w-full h-34 rounded-2xl mt-5'>
+                                        <Image
+                                            className="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer hover:scale-105 transition duration-300"
+                                            src={'/mural/lado1.jpg'}
+                                            alt=""
+                                            width={500}
+                                            height={500}
+                                            onClick={() => handleImageClick('/mural/lado1.jpg')}
+                                        />
+                                    </div>
+
+                                    <div className='w-full h-34 rounded-2xl mt-5'>
+                                        <Image
+                                            className="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer hover:scale-105 transition duration-300"
+                                            src={'/mural/lado1.jpg'}
+                                            alt=""
+                                            width={500}
+                                            height={500}
+                                            onClick={() => handleImageClick('/mural/lado1.jpg')}
+                                        />
+                                    </div>
+
+                                    <div className='w-full h-34 rounded-2xl mt-5'>
+                                        <Image
+                                            className="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer hover:scale-105 transition duration-300"
+                                            src={'/mural/lado1.jpg'}
+                                            alt=""
+                                            width={500}
+                                            height={500}
+                                            onClick={() => handleImageClick('/mural/lado1.jpg')}
+                                        />
+                                    </div>
+
+                                      <div className='w-full h-36 rounded-2xl mt-5'>
+                                        <Image
+                                            className="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer hover:scale-105 transition duration-300"
+                                            src={'/mural/lado1.jpg'}
+                                            alt=""
+                                            width={500}
+                                            height={500}
+                                            onClick={() => handleImageClick('/mural/lado1.jpg')}
+                                        />
+                                    </div>
+
+                                    {/* <div className='w- h-80 rounded-2xl bottom-10 absolute -ml-15'>
                                         <Image
                                             className="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer hover:scale-105 transition duration-300"
                                             src={'/mural/lado4.jpg'}
@@ -202,7 +246,7 @@ const NestedDiamond = () => {
                                             height={500}
                                             onClick={() => handleImageClick('/mural/lado4.jpg')}
                                         />
-                                    </div>
+                                    </div> */}
 
                                 </div>
 
@@ -273,7 +317,7 @@ const NestedDiamond = () => {
                                         </div>
                                     </div>
 
-                                    <div className="absolute top-80 left-1 leading-0 -rotate-45">
+                                    {/* <div className="absolute top-80 left-1 leading-0 -rotate-45">
                                         <div
                                             className="w-36 h-36 transform rotate-45 hover:scale-110 transition-all duration-300 cursor-pointer"
                                             onClick={() => handleImageClick('/mural/lado2.jpg')}>
@@ -285,7 +329,7 @@ const NestedDiamond = () => {
                                                 height={500}
                                             />
                                         </div>
-                                    </div>
+                                    </div> */}
 
 
                                     <div className="absolute right-2 top-19 transform -translate-y-1/2 -rotate-45">
@@ -332,7 +376,7 @@ const NestedDiamond = () => {
                                         </div>
                                     </div>
 
-                                    <div className="absolute -bottom-56 -right-16 transform -translate-x-1/2 -translate-y-1/2 -rotate-45">
+                                    {/* <div className="absolute -bottom-56 -right-16 transform -translate-x-1/2 -translate-y-1/2 -rotate-45">
                                         <div
                                             className="w-36 h-36 transform rotate-45 rounded-lg hover:scale-110 transition-all duration-300 cursor-pointer"
                                             onClick={() => handleImageClick('/mural/lado3.jpg')}>
@@ -344,7 +388,7 @@ const NestedDiamond = () => {
                                                 height={500}
                                             />
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     <div className="absolute -bottom-15 -right-57 transform -translate-x-1/2 -translate-y-1/2 -rotate-45">
                                         <div
@@ -360,7 +404,7 @@ const NestedDiamond = () => {
                                         </div>
                                     </div>
 
-                                    <div className="absolute -bottom-55 -right-57 transform -translate-x-1/2 -translate-y-1/2 -rotate-45">
+                                    {/* <div className="absolute -bottom-55 -right-57 transform -translate-x-1/2 -translate-y-1/2 -rotate-45">
                                         <div
                                             className="w-36 h-36 transform rotate-45 rounded-lg hover:scale-110 transition-all duration-300 cursor-pointer"
                                             onClick={() => handleImageClick('/mural/frame6.png')}>
@@ -372,7 +416,7 @@ const NestedDiamond = () => {
                                                 height={500}
                                             />
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     <div className="absolute -bottom-36 -right-[650px] transform -translate-x-1/2 -translate-y-1/2 -rotate-45">
                                         <div
